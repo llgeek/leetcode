@@ -14,7 +14,7 @@ Explanation:
 | 1 | 2 | 3 |
 | 4 | 5 | 6 |
 | 7 | 8 | 9 |
- ```
+ ``` 
 
 Invalid move: 4 - 1 - 3 - 6 
 Line 1 - 3 passes through key 2 which had not been selected in the pattern.
