@@ -13,7 +13,8 @@ class Solution:
 
         self.nodeque = deque()
         self.nodeque.append(start)
-        return self.bfs(maze, start, destination)
+        #return self.bfs(maze, start, destination)]
+        return self.dfs(maze, start, destination)
 
         
 
@@ -72,31 +73,31 @@ class Solution:
     #                     self.nodeque.append((d-1, curpos[1]))
     #     return False
                         
-    def bfs(self, maze, start, destination):
-        while self.nodeque:
-            curpos = self.nodeque.popleft()
+    # def bfs(self, maze, start, destination):
+    #     while self.nodeque:
+    #         curpos = self.nodeque.popleft()
 
-            if self.visited[curpos[0]][curpos[1]]:
-                continue
-            else:
-                self.visited[curpos[0]][curpos[1]] = True
-                if curpos == destination:
-                    return True
-                else:
-                    l, r, u, d = curpos[1]-1, curpos[1]+1, curpos[0]-1, curpos[0]+1
-                    while l >= 0 and not maze[curpos[0]][l]:
-                        l -= 1
-                    self.nodeque.append((curpos[0], l+1))
-                    while r < self.n and not maze[curpos[0]][r]:
-                        r += 1
-                    self.nodeque.append((curpos[0], r-1))
-                    while u >= 0 and not maze[u][curpos[1]]:
-                        u -= 1
-                    self.nodeque.append((u+1, curpos[1]))
-                    while d < self.m and not maze[d][curpos[1]]:
-                        d += 1
-                    self.nodeque.append((d-1, curpos[1]))
-        return False
+    #         if self.visited[curpos[0]][curpos[1]]:
+    #             continue
+    #         else:
+    #             self.visited[curpos[0]][curpos[1]] = True
+    #             if curpos == destination:
+    #                 return True
+    #             else:
+    #                 l, r, u, d = curpos[1]-1, curpos[1]+1, curpos[0]-1, curpos[0]+1
+    #                 while l >= 0 and not maze[curpos[0]][l]:
+    #                     l -= 1
+    #                 self.nodeque.append((curpos[0], l+1))
+    #                 while r < self.n and not maze[curpos[0]][r]:
+    #                     r += 1
+    #                 self.nodeque.append((curpos[0], r-1))
+    #                 while u >= 0 and not maze[u][curpos[1]]:
+    #                     u -= 1
+    #                 self.nodeque.append((u+1, curpos[1]))
+    #                 while d < self.m and not maze[d][curpos[1]]:
+    #                     d += 1
+    #                 self.nodeque.append((d-1, curpos[1]))
+    #     return False
 
 
 
@@ -114,7 +115,7 @@ canmaze = [[0, 0, 1, 0, 0],
 [0, 0, 0, 0, 0],
 [0, 0, 0, 1, 0],
 [0, 0, 0, 0, 0]]
-print(s.hasPath(maze, (0,4), (3,2)))
+print(s.hasPath(maze, (0,4), (4,4)))
 #print(s.hasPath(canmaze, (0,4), (4,4)))
 
 

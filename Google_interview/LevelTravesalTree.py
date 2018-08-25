@@ -31,14 +31,14 @@ class Solution:
         return None
 
 
-"""
-follow up 1
-using map to store each node's previous node
-"""
+    """
+    follow up 1
+    using map to store each node's previous node
+    """
     def treeSearchBuildMap(self, root):
         if not root:
             return None
-        self.node2prenode = dict{}
+        self.node2prenode = dict()
         nodeque = deque()
         nodeque.append(root)
         while nodeque:
