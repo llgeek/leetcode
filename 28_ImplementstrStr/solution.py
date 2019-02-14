@@ -1,3 +1,9 @@
+"""
+KMP method
+
+O(m+n) time complexity
+"""
+
 class Solution:
     def strStr(self, haystack, needle):
         """

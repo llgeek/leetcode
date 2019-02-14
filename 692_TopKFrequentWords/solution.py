@@ -1,3 +1,10 @@
+"""
+sorted solution
+
+time complexity O(NlogN)
+space compelxity O(N)
+
+"""
 from collections import Counter
 class Solution:
     def topKFrequent(self, words, k):

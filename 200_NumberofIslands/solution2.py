@@ -9,7 +9,7 @@ class Solution:
             return 0
         distance = {(-1, 0), (1, 0), (0, -1), (0, 1)}
         ufhelper = UnionFind(grid)
-        m, n = m, n = len(grid), len(grid[0])
+        m, n = len(grid), len(grid[0])
         for i in range(len(grid)):
             for j in range(len(grid[i])):
                 if grid[i][j] == '1':
