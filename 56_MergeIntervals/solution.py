@@ -6,23 +6,19 @@ class Interval:
 
 
 class Solution:
-    def merge(self, intervals):
-        """
-        :type intervals: List[Interval]
-        :rtype: List[Interval]
-        """
-        if not len(intervals):
-            return []
-        intervals = sorted(intervals, key=lambda x: x.start)
-        result = []
+    def merge(self, intervals: 'List[Interval]') -> 'List[Interval]':
+        if not intervals:
+            return intervals
+        intervals.sort(key=lambda x: x.start)
         start, end = intervals[0].start, intervals[0].end
-        for itv in intervals[1:]:
-            if itv.start <= end:
-                end = max(end,itv.end)
+        res = []
+        for interval in intervals[1:]:
+            if interval.start > end:
+                res.append(Interval(start, end))
+                start = interval.start
+                end = interval.end
             else:
-                result.append(Interval(start, end))
-                start = itv.start
-                end = itv.end
-        result.append(Interval(start, end))
-            
-            
+                end = max(end, interval.end)
+        res.append(Interval(start, end))
+        return res
+                
