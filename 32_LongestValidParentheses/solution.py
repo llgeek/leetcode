@@ -10,12 +10,19 @@ class Solution:
             if c == '(':
                 stack.append(i)
             if c == ')':
-                if not stack:
-                    stack.append(i)
-                    continue
-                if 0 <= stack[-1] < len(s) and s[stack[-1]] == '(':
+                if stack:
                     stack.pop()
-                    maxlen = max(maxlen, (i-stack[-1]))
+                if not stack: 
+                    stack.append(i)
+                else:
+                    maxlen = max(maxlen, i - stack[-1])
+        return maxlen
+
+if __name__ == "__main__":
+    # s = ")()())"
+    s = "())((()))"
+    sol = Solution()
+    print(sol.longestValidParentheses(s))
                     
 
 

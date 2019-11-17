@@ -5,7 +5,7 @@ class Solution():
         endpos = 0
         res = 0
         for i in range(len(intervals)):
-            if intervals[i][0] < end[endpos]:
+            if start[i] < end[endpos]:
                 res += 1
             else:
                 endpos += 1
@@ -13,6 +13,7 @@ class Solution():
             
 
 if __name__ == "__main__":
-    intervals = [[0, 30],[5, 10],[15, 20]]
+    # intervals = [[0, 30],[5, 10],[15, 20]]
+    intervals = [[15, 20], [5, 10], [0, 30]]
     sol = Solution()
     print(sol.meetingRoomII(intervals))
