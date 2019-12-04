@@ -21,13 +21,13 @@ class Solution(object):
         dummy = ListNode(0)
         cur = dummy
         heap = []
-        for root in lists:
+        for idx, root in enumerate(lists):
             if root:
-                heapq.heappush(heap, (root.val, root))
+                heapq.heappush(heap, (root.val, idx, root))
         while heap:
-            val, node = heapq.heappop(heap)
+            val, idx, node = heapq.heappop(heap)
             cur.next = node
             cur = cur.next
             if node.next:
-                heapq.heappush(heap, (node.next.val, node.next))
+                heapq.heappush(heap, (node.next.val, idx, node.next))
         return dummy.next
