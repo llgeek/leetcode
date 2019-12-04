@@ -17,7 +17,7 @@ class TimeMap:
         if array[mid][0] > target:
           end = mid - 1
         else:
-          start = mid
+          start = mid + 1
         return end
 
     def get(self, key: str, timestamp: int) -> str:

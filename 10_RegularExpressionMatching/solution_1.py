@@ -23,7 +23,7 @@ class Solution:
             return False
         if p[pid] == '.':
             if pid+1 < len(p) and p[pid+1] == '*':
-                return self.backtracker(s, p, sid+1, pid) or self.backtracker(s, p, sid+1, pid+2)
+                return self.backtracker(s, p, sid+1, pid) or self.backtracker(s, p, sid+1, pid+2) or self.backtracker(s, p, sid, pid+2)
             else:
                 return self.backtracker(s, p, sid+1, pid+1)
         if s[sid] != p[pid]:

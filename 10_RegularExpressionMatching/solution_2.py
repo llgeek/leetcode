@@ -25,8 +25,10 @@ if __name__ == "__main__":
     # p = "mis*is*p*."
     s = "bbbba"
     p = ".*a*a"
-    s = 'a'
-    p = 'aa*'
+    # s = 'a'
+    # p = 'aa*'
+    s = "aaaaaaaaaaaaab"
+    p = "a*a*a*a*a*a*a*a*a*a*c"
 
     sol = Solution()
     print(sol.isMatch(s, p))
