@@ -4,7 +4,7 @@ class Solution:
         cnt = Counter(t)
         missing = len(cnt)
         left, right = 0, 0
-        ans = -1, (1<<21) - 1
+        ans = -1, (1<<31) - 1
         while right < len(s):
             if s[right] in cnt:
                 cnt[s[right]] -= 1
