@@ -26,10 +26,8 @@ class Solution:
         return Counter(words).most_common(1)[0][0]
 
 if __name__ == "__main__":
-    # paragraph = 'Bob'
-    # banned = []
-    paragraph = "Bob. hIt, baLl"
-    banned = ["bob", "hit"]
+    paragraph = 'Bob'
+    banned = []
     sol = Solution()
     print(sol.mostCommonWord(paragraph, banned))
         
